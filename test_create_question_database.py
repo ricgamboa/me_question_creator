@@ -17,7 +17,7 @@ def main():
         cursor.executescript("DROP TABLE IF EXISTS question;"
                              "CREATE TABLE question("
                                  "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,"
-                                 "global_id INTEGER UNIQUE,"
+                                 "global_question_id INTEGER UNIQUE,"
                                  "num_letters INTEGER,"
                                  "icons TEXT,"
                                  "positions TEXT);")
@@ -26,5 +26,5 @@ def main():
     else:
         print("Good bye")
 
-if __name__ == main():
+if __name__ == "__main__":
     main()

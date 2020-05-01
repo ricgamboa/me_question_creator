@@ -25,12 +25,12 @@ class QuestionDB(Question):
         # Verify tables exists or create
         cursor.executescript("CREATE TABLE IF NOT EXISTS question("
                                  "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,"
-                                 "global_id INTEGER UNIQUE,"
+                                 "global_question_id INTEGER UNIQUE,"
                                  "num_letters INTEGER,"
                                  "icons TEXT,"
                                  "positions TEXT);")
         # Save values to database
-        cursor.execute("INSERT OR IGNORE INTO question (global_id,num_letters,icons,positions) VALUES (?, ?, ?, ?)",
+        cursor.execute("INSERT OR IGNORE INTO question (global_question_id,num_letters,icons,positions) VALUES (?, ?, ?, ?)",
                        (self.id, self.num_answer_letters,icons_json,pos_list_json))
 
         connection.commit()
